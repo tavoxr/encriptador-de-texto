@@ -1,0 +1,151 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    font-family: "Nunito", sans-serif;
+}
+
+.contenedor-principal{
+    height: 100vh;
+    width: 95%;
+    /* background-color: burlywood; */
+}
+
+.encabezado{
+    /* background-color: chocolate; */
+    height: 9vh;
+    
+    display: flex;
+    
+    
+
+   
+}
+
+.encabezado-titulo{
+    margin: 10px;
+    /* background-color: firebrick; */
+    margin-left: 4%;
+
+}
+
+main{
+
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    
+}
+
+
+.texto-encriptar-container{
+     /* background-color: rgb(204, 64, 64);  */
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    
+}
+
+.encriptar-texto-input{
+    margin: 10px;
+    width: 90%;
+    height: 70vh;
+    border: none;
+    border-radius: 20px;
+    background-color: #eee;
+    border: none;
+}
+
+.encriptar-texto-input:focus{
+    outline: none;
+}
+
+
+.encriptar-texto-input::placeholder{
+    font-family: "Nunito", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #55138e;
+    
+}
+
+
+
+.texto-encriptar-botones{
+    /* background-color: aqua; */
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+
+.btn-encriptar, .btn-desencriptar{
+    border: 2px solid rgb(8, 103, 167);
+    border-radius: 10px;
+    padding: 10px;
+    width: 22%;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+.btn-encriptar:hover,.btn-desencriptar:hover{
+    background-color:rgb(8, 103, 167);
+    color: #fff;
+    transition: 300ms ease;
+}
+
+
+
+
+.texto-encriptado-container{
+    background-color: #dfdfdf;
+    border: 2px solid rgb(8, 103, 167);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+     padding: 20px;
+     margin-bottom: 20px;
+}
+
+.texto-encriptado-resultado{
+    /* background-color: rebeccapurple; */
+    width: 100%;
+    word-wrap:break-word;
+   height: 70vh;
+  
+}
+
+
+.texto-encriptado-btnCopiar{
+    width: 50%;
+    border: 2px solid #55138e;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+   
+}
+
+.texto-encriptado-btnCopiar:hover{
+    background-color: #55138e;
+    color: #fff;
+    transition: 300ms ease;
+}
