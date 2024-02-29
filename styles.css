@@ -62,11 +62,17 @@ main{
     border: none;
     border-radius: 20px;
     background-color: #eee;
-    border: none;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #55138e;
+    max-width: 90%;
 }
 
 .encriptar-texto-input:focus{
     outline: none;
+
 }
 
 
@@ -76,6 +82,7 @@ main{
     font-weight: 500;
     font-style: italic;
     color: #55138e;
+    
     
 }
 
