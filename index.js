@@ -5,7 +5,10 @@ const btnDesencriptar = document.querySelector('.btn-desencriptar');
 const btnCopiar = document.querySelector('.texto-encriptado-btnCopiar');
 const textoEncriptadoPResultado = document.querySelector('.texto-encriptado-resultado');
 
+let isEncrypted = false;
 const valorFakeLetras = 3; 
+
+btnDesencriptar.disabled =true;
 
 
 btnEncriptar.addEventListener('click',encriptar);
@@ -104,7 +107,7 @@ function encriptar() {
 
     //Valida si el usuario ingreso texto sino devuelve un alert
     if(!textoUsuario){
-        alert('ingresa algo')
+        alert('Por favor ingresa algun texto');
         return;
     }
 
@@ -116,7 +119,12 @@ function encriptar() {
 
     //se limpia de nuevo el textarea
     inputText.value ="";
+    btnDesencriptar.disabled = false;
 
+    //isEncrypted= true;
+    
+    //isEncrypted ? btnEncriptar.className = 'btn-encriptar-disabled' : btnEncriptar.className = 'btn-encriptar'; 
+   
 }
 
 
@@ -188,17 +196,27 @@ function desencritarCodigos(codigos){
 
 function desencriptar(){
 
-    let textoEncriptado = textoEncriptadoPResultado.textContent;
-    let textoDesencriptado = "";
+    let textoEncriptado = inputText.value;
+    if(inputText.value == ""){
+        alert("Por favor ingresa el texto a desencriptar.")
+    }else{
+        let textoDesencriptado = "";
 
-    let arrayCaracteres =  textoEncriptado.split("*");
-    let arrayCodigos = arrayCaracteres.filter(codigo=>  !isNaN(codigo))
-
-    textoEncriptadoPResultado.textContent = "";
+        let arrayCaracteres =  textoEncriptado.split("*");
+        let arrayCodigos = arrayCaracteres.filter(codigo=>  !isNaN(codigo))
     
-    textoDesencriptado = desencritarCodigos(arrayCodigos);
+        textoEncriptadoPResultado.textContent = "";
+        
+        textoDesencriptado = desencritarCodigos(arrayCodigos);
+    
+        textoEncriptadoPResultado.textContent = textoDesencriptado;
+        inputText.value = "";
+    
+        btnDesencriptar.disabled = true;
+        isEncrypted= false;
 
-    textoEncriptadoPResultado.textContent = textoDesencriptado;
+    }
+    
 }
 
 
@@ -212,6 +230,17 @@ async function copiarTexto(){
             await navigator.clipboard.writeText(textoEncriptadoPResultado.textContent);
         }
 
+        Toastify({
+            text: "¡Texto copiado!",
+            className: "info",
+            gravity:"top",
+            
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            
+
+          }).showToast();
 
        
     }catch(err){

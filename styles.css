@@ -10,14 +10,14 @@ body{
 }
 
 .contenedor-principal{
-    height: 100vh;
+    min-height: 100vh;
     width: 95%;
     /* background-color: burlywood; */
 }
 
 .encabezado{
     /* background-color: chocolate; */
-    height: 9vh;
+    min-height: 9vh;
     
     display: flex;
     
@@ -39,7 +39,7 @@ main{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     
 }
 
@@ -58,7 +58,7 @@ main{
 .encriptar-texto-input{
     margin: 10px;
     width: 90%;
-    height: 70vh;
+    min-height: 70vh;
     border: none;
     border-radius: 20px;
     background-color: #eee;
@@ -105,7 +105,21 @@ main{
     font-family: "Nunito", sans-serif;
     cursor: pointer;
     font-weight: 500;
+    
 }
+
+.btn-encriptar-disabled, .btn-desencriptar-disable{
+    border: 2px solid rgb(123, 138, 148);
+    border-radius: 10px;
+    padding: 10px;
+    width: 22%;
+    font-family: "Nunito", sans-serif;
+    cursor: not-allowed;
+    pointer-events: none;
+    font-weight: 500;
+    
+}
+
 
 
 .btn-encriptar:hover,.btn-desencriptar:hover{
@@ -135,6 +149,7 @@ main{
     width: 100%;
     word-wrap:break-word;
    height: 70vh;
+   overflow: scroll;
   
 }
 
@@ -155,4 +170,150 @@ main{
     background-color: #55138e;
     color: #fff;
     transition: 300ms ease;
+}
+
+
+
+/*Hacer la pagina responsive*/
+
+@media screen and (max-width:520px){
+
+    
+.contenedor-principal{
+    min-height: 100vh;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: burlywood; */
+}
+
+.encabezado{
+    display: flex;   
+    justify-content: center;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #55138e; */
+}
+
+
+.texto-encriptar-container{
+   width: 100%;
+   gap: 20px;
+   margin-bottom: 20px;
+}
+
+.encriptar-texto-input{
+   margin: 10px;
+   width: 95%;
+   min-height: 30vh;
+   
+}
+
+
+.encriptar-texto-input::placeholder{
+   text-align: center;
+   
+    
+    
+}
+
+.texto-encriptar-botones{
+    width: 100%;
+    justify-content: space-around;
+}
+
+.btn-encriptar, .btn-desencriptar{
+    width: 30%;
+    font-size: 15px;
+    font-weight: 700;
+    
+}
+
+
+
+.texto-encriptado-container{
+    width: 88%;
+     padding: 5px;
+     margin-bottom: 20px;
+  
+   
+}
+
+
+
+.texto-encriptado-resultado{
+    width: 100%;
+    word-wrap:break-word;
+    height: 30vh;
+    overflow: scroll;
+    
+   
+  
+}
+
+
+.texto-encriptado-btnCopiar{
+    width: 50%;
+    font-weight: 700;
+    font-size: 16px;
+   
+}
+
+
+
+
+}
+
+
+@media screen and (min-width:521px) and (max-width:768px){
+
+
+.texto-encriptar-container{
+   width: 50%;
+   justify-content: center;
+}
+
+.encriptar-texto-input{
+   width: 90%;
+   min-height: 70vh;
+   max-width: 90%;
+}
+
+
+.texto-encriptar-botones{
+    width: 100%;
+}
+
+.btn-encriptar, .btn-desencriptar{
+    width: 38%;
+    font-size: 14px;
+}
+
+
+.texto-encriptado-container{
+    width: 40%;
+     height: 78vh;
+     margin-top: 2vh;
+}
+
+.texto-encriptado-resultado{
+    width: 100%;
+    word-wrap:break-word;
+   height: 70vh;
+   overflow: scroll;
+  
+}
+
+
+.texto-encriptado-btnCopiar{
+    font-size: 15px;
+   
+}
 }
